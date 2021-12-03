@@ -2,12 +2,11 @@ import React, { useEffect, useState } from "react";
 
 
 const OrdenTabla = () => {
-    const querystring = window.location.search;
-	const params = new URLSearchParams(querystring);
+
     const [tableData, setTableData] = useState([])
 
     useEffect(()=>{
-        fetch("https://localhost:44342/api/Ordenes/"+params.get("id"))
+        fetch("https://localhost:44342/api/Ordenes")
         .then((data) => data.json())
         .then((data) => setTableData(data))
     })

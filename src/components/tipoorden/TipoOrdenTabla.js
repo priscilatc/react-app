@@ -43,11 +43,11 @@ const TipoOrdenTabla = () => {
 				</tr>
 			</tfoot>
 			<tbody>
-				{tableData.map((orden)=>(
+				{tableData.map((torden)=>(
 					<tr key="{orde.idTipoOrden}">
-					<td>{orden.idTipoOrden}</td>
-					<td>{orden.descripcion}</td>
-					<td><button onClick={e => enviarParams(e, orden.idTipoOrden)}><i class="fas fa-clipboard-list"></i></button></td>
+					<td>{torden.idTipoOrden}</td>
+					<td>{torden.descripcion}</td>
+					<td><button onClick={e => enviarParams(e, torden.idTipoOrden)}><i class="fas fa-clipboard-list"></i></button></td>
 					</tr>
 				))}
 			</tbody>
