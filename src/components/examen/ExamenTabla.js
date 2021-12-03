@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 //import { DataGrid } from '@mui/x-data-grid';
+import Select from 'react-select'
 
 const columns = [
     { field: 'idExamen', headerName: 'ID', width: 250 },
@@ -12,24 +13,35 @@ const columns = [
 
 const ExamenTabla = () => {
     
+ //   const querystring = window.location.search;
+ //   const params = URLSearchParams(querystring);
+
     const [tableData, setTableData] = useState([])
 
     useEffect(()=>{
-        fetch("https://localhost:44342/api/Examen")
+        fetch("https://localhost:44342/api/Examen/")
         .then((data) => data.json())
         .then((data) => setTableData(data))
     })
+
+    const options = [
+        { value: '', label: 'ID Area' },
+      ]
+      
+      const MyComponent = () => (
+        <Select options={options} />
+      ) 
     
 	
     return (
 
-        <div class="container mt-5  ">
+        <div class="container-fluid mt-4">
         <div class="card shadow mb-4  ">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Examen</h6>
-        </div>
+        </div>     
         <div class="card-body mb-5">
-		
+		<Select options={options} />
 		<table class="table table-success table-stripe">
 			<thead>
 				<tr>

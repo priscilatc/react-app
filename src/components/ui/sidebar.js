@@ -17,7 +17,7 @@ export const Sidebar =() => {
                         activeClassName="active"
                         className="nav-item nav-link" 
                         exact
-                        to="/"
+                        to="/index"
                     >
                         Inicio
                     </NavLink>
@@ -46,6 +46,54 @@ export const Sidebar =() => {
                         Médico
                     </NavLink>
             </div>
+
+            <hr class="sidebar-divider my-0"/>
+            <div class="nav-item active">
+            <NavLink 
+                        activeClassName="active"
+                        className="nav-item nav-link" 
+                        exact
+                        to="/tipoordentabla"
+                    >
+                        Tipo Orden
+                    </NavLink>
+            </div>
+
+            <hr class="sidebar-divider my-0"/>
+            <div class="nav-item active">
+            <NavLink 
+                        activeClassName="active"
+                        className="nav-item nav-link" 
+                        exact
+                        to="/orden"
+                    >
+                        Orden
+                    </NavLink>
+            </div>
+
+            <hr class="sidebar-divider my-0"/>
+            <div class="nav-item active">
+            <NavLink 
+                        activeClassName="active"
+                        className="nav-item nav-link" 
+                        exact
+                        to="/resultadostabla"
+                    >
+                        Resultados
+                    </NavLink>
+            </div>
+
+            <hr class="sidebar-divider my-0"/>
+            <div class="nav-item active">
+            <NavLink 
+                        activeClassName="active"
+                        className="nav-item nav-link" 
+                        exact
+                        to="/ordendetalletabla"
+                    >
+                        Orden Detalle
+                    </NavLink>
+             </div>
 
             <hr class="sidebar-divider my-0"/>
         </ul>
