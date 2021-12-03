@@ -11,6 +11,11 @@ const OrdenDetalleTabla = () => {
         .then((data) => setTableData(data))
     })
     
+    function enviarParams (e, idOrdenDetalle) {
+
+		e.preventDefault();
+		window.open('/examen?idOrdenDetalle='+idOrdenDetalle, '_parent');
+	}
 	
     return (
 
@@ -45,13 +50,13 @@ const OrdenDetalleTabla = () => {
 			</tfoot>
 			<tbody>
 				{tableData.map((ordendetalle)=>(
-					<tr>
+					<tr key="{ordendetalle.idOrdenDetalle}">
 					<td>{ordendetalle.idOrdenDetalle}</td>
 					<td>{ordendetalle.idOrden}</td>
                     <td>{ordendetalle.nOrden}</td>
                     <td>{ordendetalle.idExamen}</td>
                     <td>{ordendetalle.activo}</td>
-                    <td><i class="fas fa-clipboard-list"></i></td>
+                    <td><a href="#" onClick={e => enviarParams(e, ordendetalle.idOrdenDetalle)}></a><i class="fas fa-clipboard-list"></i></td>
 					</tr>
 				))}
 			</tbody>

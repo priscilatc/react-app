@@ -1,8 +1,8 @@
 import HttpClient from '../services/HtttpClient';
 
-export const registrarResultados = Resultados => {
+export const registrarResultados = resultados => {
     return new Promise((resolve, eject) =>{
-        HttpClient.post('/resultadostabla', Resultados).then(response =>{
+        HttpClient.post('/Resultado', resultados).then(response =>{
             resolve(response);
         })
     })

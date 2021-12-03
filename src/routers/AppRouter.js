@@ -7,6 +7,7 @@ import OrdenDetalleTabla from "../components/ordendetalle/OrdenDetalleTabla";
 import ResultadosTabla from "../components/resultados/ResultadosTabla";
 import ResultadosForms from "../components/resultados/ResultadosForms";
 import OrdenTabla from "../components/orden/OrdenTabla";
+import AreaTabla from "../components/arealab/AreaLabTabla";
 import { Navbar } from "../components/ui/navbar";
 import {Sidebar} from "../components/ui/sidebar";
 
@@ -27,6 +28,7 @@ export const AppRouter = () => {
                 <Route path="/resultadoforms" element={<ResultadosForms/>}/>
                 <Route path="/ordendetalletabla" element={<OrdenDetalleTabla/>}/>
                 <Route path="/tipoordentabla" element={<TipoOrdenTabla/>}/>
+                <Route path="/area" element={<AreaTabla/>}/>
 
             </Routes>           
             </div></div>

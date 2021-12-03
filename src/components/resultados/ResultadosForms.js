@@ -1,11 +1,11 @@
 import React,{ useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+//import { useNavigate } from 'react-router-dom';
 import { registrarResultados } from '../../actions/ResultadoAction';
-//import { Link, NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export const ResultadosForms = () => {
 
-    let navigate = useNavigate();
+ //   let navigate = useNavigate();
 	
     const [resultados, setResultados] = useState({
         idExamen: '',
@@ -27,17 +27,22 @@ export const ResultadosForms = () => {
     const registrarResultadosBoton = e => {
         e.preventDefault();
         registrarResultados(resultados)
-            .then(response => console.log('Se registró el resultado con éxito ', response));
-        window.open('/resultadostabla?msj=1', '_parent');
+            .then(response => alert('Se registró el resultado con éxito ', response));
+        //window.open('/resultadostabla', '_parent');
+        console.log(resultados);
     }
     return ( 
         <div class="container mt-5  ">
+            <Link to="/resultadostabla">
+        <li class="fas fa-arrow-left"></li><a>Regresar</a>
+        </Link>
+        <hr></hr>
         <div class="card shadow mb-4  ">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Resultados</h6>
         </div>
         <div class="card-body mb-5">
-
+        
        <form className="row container">
 
            <label class="card-text">Examen: </label> 

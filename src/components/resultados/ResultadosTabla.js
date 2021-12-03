@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 //import { DataGrid } from '@mui/x-data-grid';
-import { Link, NavLink } from 'react-router-dom'
+import { Link} from 'react-router-dom'
 
 const ResultadosTabla = () => {
     
@@ -22,7 +22,7 @@ const ResultadosTabla = () => {
         </div>
         <div class="card-body mb-5">
 		<Link to="/resultadoforms">
-		<button className="btn btn-primary my-3">Nuevo Tipo Orden</button>
+		<button className="btn btn-primary my-3">Nuevo Resultado</button>
 		</Link>
 		<table class="table table-success table-stripe">
 			<thead>
@@ -51,7 +51,7 @@ const ResultadosTabla = () => {
 			</tfoot>
 			<tbody>
 				{tableData.map((resultados)=>(
-					<tr>
+					<tr key="{resultados.idResultados}">
 					<td>{resultados.idResultados}</td>
 					<td>{resultados.idExamen}</td>
                     <td>{resultados.idOrden}</td>

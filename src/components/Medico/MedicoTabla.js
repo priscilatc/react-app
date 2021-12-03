@@ -1,18 +1,6 @@
 import React, { useEffect, useState } from "react";
 //import { DataGrid } from '@mui/x-data-grid';
 
-const columns = [
-    { field: 'idTblMedico', headerName: 'ID', width: 300 },
-    { field: 'nombres', headerName: 'Nombres', width: 300 },
-    { field: 'apellidos', headerName: 'Apellidos', width: 300 },
-    { field: 'numIdentificacion', headerName: 'Numero de Identificación', width: 300},
-    { field: 'codMinsa', headerName: 'Código Minsa', width: 200 },
-    { field: 'email', headerName: 'Email', width: 200 },
-    { field: 'telefono', headerName: 'Teléfono', width: 200 },
-];
-
-
-
 const MedicoTabla = () => {
     
     const [tableData, setTableData] = useState([])

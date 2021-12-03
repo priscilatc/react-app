@@ -5,7 +5,7 @@ export const Sidebar =() => {
     return (
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
  
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/index">
             
             <i class="fas fa-clinic-medical"></i>
             </a>
@@ -20,6 +20,18 @@ export const Sidebar =() => {
                         to="/index"
                     >
                         Inicio
+                    </NavLink>
+            </div>
+
+            <hr class="sidebar-divider my-0"/>
+            <div class="nav-item active">
+            <NavLink 
+                        activeClassName="active"
+                        className="nav-item nav-link" 
+                        exact
+                        to="/area"
+                    >
+                        Area de Laboratorio Servicio
                     </NavLink>
             </div>
             

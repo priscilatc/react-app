@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 
 
 
-const ExamenTabla = () => {
+const AreaTabla = () => {
 
     const [tableData, setTableData] = useState([])
 
     useEffect(()=>{
-        fetch("https://localhost:44342/api/Examen")
+        fetch("https://localhost:44342/api/AreaLabServicio")
         .then((data) => data.json())
         .then((data) => setTableData(data))
     })
@@ -25,25 +25,22 @@ const ExamenTabla = () => {
 				<tr>
 				  <th scope="col">ID</th>
 				  <th scope="col">Descripción</th>
-				  <th scope="col">Descripción Corta</th>
-                  <th scope="col">Confidencial</th>
+				  <th scope="col">Estado</th>                 
 				</tr>
 			</thead>
 			<tfoot>
 				<tr>
 				  <th scope="col">ID</th>
 				  <th scope="col">Descripción</th>
-				  <th scope="col">Descripción Corta</th>
-                  <th scope="col">Confidencial </th>
+                  <th scope="col">Estado</th>
 				</tr>
 			</tfoot>
 			<tbody>
-				{tableData.map((examen)=>(
-					<tr>
-					<td>{examen.idExamen}</td>
-					<td>{examen.descripcion}</td>
-                    <td>{examen.descripcionCorta}</td>
-                    <td>{examen.confidencial}</td>
+				{tableData.map((area)=>(
+					<tr key ="{area.idAreaLabServicio}">
+					<td>{area.idAreaLabServicio}</td>
+					<td>{area.descripcion}</td>
+                    <td>{area.estado}</td>
 					</tr>
 				))}
 			</tbody>
@@ -61,4 +58,4 @@ const ExamenTabla = () => {
   
 }
 
-export default ExamenTabla;
+export default AreaTabla;

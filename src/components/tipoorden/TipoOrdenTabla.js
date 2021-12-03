@@ -10,7 +10,12 @@ const TipoOrdenTabla = () => {
         .then((data) => data.json())
         .then((data) => setTableData(data))
     })
-    
+	
+	function enviarParams (e, idTipoOrden) {
+
+		e.preventDefault();
+		window.open('/orden?idTipoOrden='+idTipoOrden, '_parent');
+	}
 	
     return (
 
@@ -27,19 +32,22 @@ const TipoOrdenTabla = () => {
 				<tr>
 				  <th scope="col">ID</th>
 				  <th scope="col">Descripción</th>
+				  <th scope="col">Opciones</th>
 				</tr>
 			</thead>
 			<tfoot>
 				<tr>
                 <th scope="col">ID</th>
 				<th scope="col">Descripción</th>
+				<th scope="col">Opciones</th>
 				</tr>
 			</tfoot>
 			<tbody>
 				{tableData.map((orden)=>(
-					<tr>
+					<tr key="{orde.idTipoOrden}">
 					<td>{orden.idTipoOrden}</td>
 					<td>{orden.descripcion}</td>
+					<td><a onClick={e => enviarParams(e, orden.idTipoOrden)}></a><i class="fas fa-clipboard-list"></i></td>
 					</tr>
 				))}
 			</tbody>
