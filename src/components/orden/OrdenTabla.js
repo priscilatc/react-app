@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from "react";
-//import { DataGrid } from '@mui/x-data-grid';
+
 
 const OrdenTabla = () => {
-    
+    const querystring = window.location.search;
+	const params = new URLSearchParams(querystring);
     const [tableData, setTableData] = useState([])
 
     useEffect(()=>{
-        fetch("https://localhost:44342/api/Ordenes")
+        fetch("https://localhost:44342/api/Ordenes/"+params.get("id"))
         .then((data) => data.json())
         .then((data) => setTableData(data))
     })
-    
-	
     return (
 
         <div class="container-fluid mt-4">
@@ -25,36 +24,34 @@ const OrdenTabla = () => {
 		<table class="table table-success table-stripe">
 			<thead>
 				<tr>
-				  <th scope="col">ID</th>
-				  <th scope="col">Numero de Orden</th>
-				  <th scope="col">Asistencia</th>
-                  <th scope="col">Observaciones</th>
-                  <th scope="col">Activo</th>
-                  <th scope="col">Fecha Orden</th>
+				  <th scope="col">No. Orden</th>
+                  <th scope="col">Asistencia</th>
+				  <th scope="col">Observaciones</th>
+				  <th scope="col">Fecha de cita</th>
+				  <th scope="col">Fecha de orden</th>
 				</tr>
 			</thead>
-			<tfoot>
-				<tr>
-                <th scope="col">ID</th>
-				  <th scope="col">Numero de Orden</th>
-				  <th scope="col">Asistencia</th>
-                  <th scope="col">Observaciones</th>
-                  <th scope="col">Activo</th>
-                  <th scope="col">Fecha Orden</th>
-				</tr>
-			</tfoot>
 			<tbody>
 				{tableData.map((orden)=>(
 					<tr>
-					<td>{orden.idOrden}</td>
 					<td>{orden.nOrden}</td>
-                    <td>{orden.asistencia}</td>
-                    <td>{orden.observaciones}</td>
-                    <td>{orden.activo}</td>
-                    <td>{orden.fechaOrden}</td>
+					<td>{orden.asistencia}</td>
+					<td>{orden.observaciones}</td>
+                    <td>{orden.fechaCita}</td>
+                    <td>{orden.fechaOrden}</td>					
 					</tr>
 				))}
 			</tbody>
+			<tfoot>
+				<tr>
+				  <th scope="col">No. Orden</th>
+                  <th scope="col">Asistencia</th>
+				  <th scope="col">Observaciones</th>
+				  <th scope="col">Fecha de cita</th>
+				  <th scope="col">Fecha de orden</th>
+				</tr>
+			</tfoot>
+			
 			
 		</table>
 		

@@ -7,3 +7,21 @@ export const registrarResultados = resultados => {
         })
     })
 }
+
+export const listarOrden = () => {
+    return new Promise((resolve, reject) => {
+        HttpClient.get('/Ordenes').then(response =>{
+            resolve(response);
+        })
+    })
+}
+
+export const listarExamen = () => {
+    return new Promise((resolve, reject) => {
+        HttpClient.get('/Examen').then(response =>{
+            resolve(response);
+        })
+    })
+}
+
+

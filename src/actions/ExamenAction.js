@@ -7,3 +7,11 @@ export const listarExamenOrden = (examen) => {
         })
     })
 }
+
+export const listarArea = () => {
+    return new Promise((resolve, reject) => {
+        HttpClient.get('/AreaLabServicio').then(response =>{
+            resolve(response);
+        })
+    })
+}

@@ -47,7 +47,7 @@ const TipoOrdenTabla = () => {
 					<tr key="{orde.idTipoOrden}">
 					<td>{orden.idTipoOrden}</td>
 					<td>{orden.descripcion}</td>
-					<td><a onClick={e => enviarParams(e, orden.idTipoOrden)}></a><i class="fas fa-clipboard-list"></i></td>
+					<td><button onClick={e => enviarParams(e, orden.idTipoOrden)}><i class="fas fa-clipboard-list"></i></button></td>
 					</tr>
 				))}
 			</tbody>
